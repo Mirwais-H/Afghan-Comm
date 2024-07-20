@@ -1,6 +1,7 @@
 /* Importing Google Font - Open Sans */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -542,13 +543,13 @@ body.sidebar-hidden .main-layout .sidebar {
   color: #fff;
 }
 .basic .package-name{
-  background: #ffecb3;
+  background: #3b82f6;
 }
 .premium .package-name{
   background: #d0b3ff;
 }
 .ultimate .package-name{
-  background: #baf8d4;
+  background: #01b3ff;
 }
 .basic .package-name::before{
   content: "Basic";
@@ -616,6 +617,349 @@ body.sidebar-hidden .main-layout .sidebar {
   box-shadow: 0 5px 10px rgba(0,0,0,0.12);
 }
 
+/* Login and signup forms */ 
+
+.container-forms{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e1;
+  column-gap: 30px;
+}
+.form{
+  position: absolute;
+  max-width: 430px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 6px;
+  background: #FFF;
+}
+.form.signup{
+  opacity: 0;
+  pointer-events: none;
+}
+.forms.show-signup .form.signup{
+  opacity: 1;
+  pointer-events: auto;
+}
+.forms.show-signup .form.login{
+  opacity: 0;
+  pointer-events: none;
+}
+header{
+  font-size: 28px;
+  font-weight: 600;
+  color: #232836;
+  text-align: center;
+}
+form{
+  margin-top: 30px;
+}
+.form .field{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+.field input,
+.field button{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 6px;
+}
+.field input{
+  outline: none;
+  padding: 0 15px;
+  border: 1px solid#CACACA;
+}
+.field input:focus{
+  border-bottom-width: 2px;
+}
+.eye-icon{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8b8b8b;
+  cursor: pointer;
+  padding: 5px;
+}
+.field button{
+  color: #fff;
+  background-color: #0171d3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.field button:hover{
+  background-color: #016dcb;
+}
+.form-link{
+  text-align: center;
+  margin-top: 10px;
+}
+.form-link span,
+.form-link a{
+  font-size: 14px;
+  font-weight: 400;
+  color: #232836;
+}
+.form a{
+  color: #0171d3;
+  text-decoration: none;
+}
+.form-content a:hover{
+  text-decoration: underline;
+}
+.line{
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 36px 0;
+  background-color: #d4d4d4;
+}
+.line::before{
+  content: 'Or';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  color: #8b8b8b;
+  padding: 0 15px;
+}
+.media-options a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a.facebook{
+  color: #fff;
+  background-color: #4267b2;
+}
+a.facebook .facebook-icon{
+  height: 28px;
+  width: 28px;
+  color: #0171d3;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.facebook-icon,
+img.google-img{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+img.google-img{
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+a.google{
+  border: 1px solid #CACACA;
+}
+a.google span{
+  font-weight: 500;
+  opacity: 0.6;
+  color: #232836;
+}
+@media screen and (max-width: 400px) {
+  .form{
+      padding: 20px 10px;
+  }
+  
+}
+
+/* Report form */ 
+
+.report-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.report-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 400px;
+  width: 100%;
+}
+
+.report-form h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.report-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.report-form input,
+.report-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 0.5px solid rgb(133, 129, 129);
+  border-radius: 5px;
+}
+
+.report-form button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.report-form button:hover {
+  background-color: #555;
+}
+
+/* Help Form*/ 
+.help-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.help-form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.help-form h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.help-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.help-form input,
+.help-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 0.5px solid rgb(133, 129, 129);
+  border-radius: 5px;
+}
+
+.help-form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.help-form button:hover {
+  background-color: #555;
+}
+
+/* feedback form */ 
+
+.feedback-form-section {
+  flex: 1;
+  padding: 2rem;
+}
+
+.feedback-form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feedback-form h2 {
+  margin-top: 0;
+}
+
+.feedback-form label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.feedback-form .rating {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.feedback-form .rating input {
+  display: none;
+}
+
+.feedback-form .rating label {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.feedback-form .rating input:checked + label {
+  background-color: #ffdd00;
+  color: #fff;
+}
+
+.feedback-form .checkbox-group {
+  margin: 1rem -5;
+}
+
+.feedback-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  background-color: #555;
+}
 
 /* Responsive media code for small devices */
 @media (max-width: 768px) {
