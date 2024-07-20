@@ -304,7 +304,9 @@ body.sidebar-hidden .main-layout .sidebar {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
+
 
 .video-list .video-card:hover .title {
   color: var(--primary-color);
@@ -377,7 +379,9 @@ body.sidebar-hidden .main-layout .sidebar {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
+
 
 .short-list .short-card:hover .title {
   color: var(--primary-color);
