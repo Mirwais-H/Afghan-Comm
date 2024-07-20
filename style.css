@@ -300,12 +300,12 @@ body.sidebar-hidden .main-layout .sidebar {
   color: var(--black-color);
   font-weight: 600;
   line-height: 1.375;
+  max-height: 2.75rem; /* 1.375 * 2 (number of lines) */
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
+  display: block;
 }
+
 
 
 .video-list .video-card:hover .title {
@@ -375,12 +375,12 @@ body.sidebar-hidden .main-layout .sidebar {
   color: var(--black-color);
   font-weight: 600;
   line-height: 1.375;
+  max-height: 2.75rem; /* 1.375 * 2 (number of lines) */
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
+  display: block;
 }
+
 
 
 .short-list .short-card:hover .title {
