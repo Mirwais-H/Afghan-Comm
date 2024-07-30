@@ -1,55 +1,99 @@
-const menuButtons = document.querySelectorAll(".menu-button");
-const screenOverlay = document.querySelector(".main-layout .screen-overlay");
-const themeButton = document.querySelector(".navbar .theme-button i");
+document.addEventListener('DOMContentLoaded', function() {
+  // Menu buttons and screen overlay
+  const menuButtons = document.querySelectorAll(".menu-button");
+  const screenOverlay = document.querySelector(".main-layout .screen-overlay");
+  const themeButton = document.querySelector(".navbar .theme-button i");
 
-// Toggle sidebar visibility when menu buttons are clicked
-menuButtons.forEach(button => {
-  button.addEventListener("click", () => {
+  // Toggle sidebar visibility when menu buttons are clicked
+  menuButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      document.body.classList.toggle("sidebar-hidden");
+    });
+  });
+
+  // Toggle sidebar visibility when screen overlay is clicked
+  screenOverlay.addEventListener("click", () => {
     document.body.classList.toggle("sidebar-hidden");
   });
+
+  // Show sidebar on large screens by default
+  if (window.innerWidth >= 768) {
+    document.body.classList.remove("sidebar-hidden");
+  }
+  // login and signup forms
+
+const slidePage = document.querySelector(".slide-page");
+const nextBtnFirst = document.querySelector(".firstNext");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submitBtn = document.querySelector(".submit");
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bullet = document.querySelectorAll(".step .bullet");
+let current = 1;
+
+nextBtnFirst.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-75%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+submitBtn.addEventListener("click", function(){
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+  setTimeout(function(){
+    alert("Your Form Successfully Signed up");
+    location.reload();
+  },800);
 });
 
-// Toggle sidebar visibility when screen overlay is clicked
-screenOverlay.addEventListener("click", () => {
-  document.body.classList.toggle("sidebar-hidden");
+prevBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "0%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnFourth.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
 });
 
-
-
-// Show sidebar on large screens by default
-if (window.innerWidth >= 768) {
-  document.body.classList.remove("sidebar-hidden");
 }
-
-
-// Login and signup forms 
-const forms = document.querySelector(".forms"),
-pwShowHide = document.querySelectorAll(".eye-icon"),
-links = document.querySelectorAll(".link");
-
-pwShowHide.forEach(eyeIcon => {
-eyeIcon.addEventListener("click", () => {
-  let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
-  
-  pwFields.forEach(password => {
-      if(password.type === "password"){
-          password.type = "text";
-          eyeIcon.classList.replace("bx-hide", "bx-show");
-          return;
-      }
-      password.type = "password";
-      eyeIcon.classList.replace("bx-show", "bx-hide");
-  })
-  
-})
-})      
-
-links.forEach(link => {
-link.addEventListener("click", e => {
- e.preventDefault(); //preventing form submit
- forms.classList.toggle("show-signup");
-})
-})
-
-
-// report form
+)
