@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Afghan Comm</title>
-  <!-- Linking Unicons For Icons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="sidebar-hidden">
   <div class="container">
-    <!-- Header / Navbar -->
     <header>
       <nav class="navbar">
         <div class="nav-section nav-left">
@@ -33,23 +30,21 @@
           </form>
         </div>
         
-        <div class="nav-section nav-right">
+        <div class="nav-section nav-right" id="nav-right">
           <button class="nav-button search-button">
             <i class="uil uil-search"></i>
           </button>
-          <a href="account.html">
-            <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="user-image">
-          </a>          
+          <a href="login.html">
+            <button type="button" class="login-btn">login</button>
+          </a>
         </div>
         
       </nav>
     </header>
     
-    <!-- Main Layout -->
     <main class="main-layout">
       <div class="screen-overlay"></div>
 
-      <!-- Sidebar -->
       <aside class="sidebar">
         <div class="nav-section nav-left">
           <button class="nav-button menu-button">
@@ -121,87 +116,73 @@
         </div>
       </aside>
 
-      <section class="container-forms">
-        <div class="form login">
-            <div class="form-content">
-                <header>Login</header>
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
-                    </div>
-                    <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
-                        <i class='bx bx-hide eye-icon'></i>
-                    </div>
-                    <div class="form-link">
-                        <a href="#" class="forgot-pass">Forgot password?</a>
-                    </div>
-                    <div class="field button-field">
-                        <button>Login</button>
-                    </div>
-                </form>
-                <div class="form-link">
-                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
-                </div>
+      <div class="content-wrapper">
+        <!-- Category List -->
+        <div class="category-list">       
+        </div>    
+
+      <section class="account-page">
+        <div class="account-container">
+          <h2>Account Details</h2>
+          <div class="profile-section">
+            <div class="profile-header">
+              <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="profile-image">
+              <h3 class="profile-name">User Name</h3>
             </div>
-            <div class="line"></div>
-            <div class="media-options">
-                <a href="#" class="field facebook">
-                    <i class='bx bxl-facebook facebook-icon'></i>
-                    <span>Login with Facebook</span>
-                </a>
+            <div class="profile-details">
+              <p><strong>First Name:</strong> John</p>
+              <p><strong>Last Name:</strong> Doe</p>
+              <p><strong>Email:</strong> johndoe@example.com</p>
+              <p><strong>Username:</strong> johndoe</p>
             </div>
-            <div class="media-options">
-                <a href="#" class="field google">
-                    <img src="#" alt="" class="google-img">
-                    <span>Login with Google</span>
-                </a>
-            </div>
+          </div>
+
+          <div class="account-settings">
+            <h3>Account Settings</h3>
+            <form id="account-settings-form">
+              <div class="input-group">
+                <label for="settings-email">Email</label>
+                <input type="email" id="settings-email" value="johndoe@example.com">
+              </div>
+              <div class="input-group">
+                <label for="settings-username">Username</label>
+                <input type="text" id="settings-username" value="johndoe">
+              </div>
+              <div class="input-group">
+                <label for="settings-password">Password</label>
+                <input type="password" id="settings-password" placeholder="New Password">
+              </div>
+              <button type="submit" class="form-button">Update Settings</button>
+            </form>
+          </div>
+
+          <div class="security-settings">
+            <h3>Security Settings</h3>
+            <form id="security-settings-form">
+              <div class="input-group">
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" required>
+              </div>
+              <div class="input-group">
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" required>
+              </div>
+              <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
+              </div>
+              <button type="submit" class="form-button">Update Password</button>
+            </form>
+          </div>
+
+          <div class="logout-section">
+            <button class="logout-button" onclick="handleLogout()">Logout</button>
+          </div>
         </div>
-        <!-- Signup Form -->
-        <div class="form signup">
-            <div class="form-content">
-                <header>Signup</header>
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
-                    </div>
-                    <div class="field input-field">
-                        <input type="password" placeholder="Create password" class="password">
-                    </div>
-                    <div class="field input-field">
-                        <input type="password" placeholder="Confirm password" class="password">
-                        <i class='bx bx-hide eye-icon'></i>
-                    </div>
-                    <div class="field button-field">
-                        <button>Signup</button>
-                    </div>
-                </form>
-                <div class="form-link">
-                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="media-options">
-                <a href="#" class="field facebook">
-                    <i class='bx bxl-facebook facebook-icon'></i>
-                    <span>Login with Facebook</span>
-                </a>
-            </div>
-            <div class="media-options">
-                <a href="#" class="field google">
-                    <img src="#" alt="" class="google-img">
-                    <span>Login with Google</span>
-                </a>
-            </div>
-        </div>
-    </section>
-        
-      </div>
+      </section>
     </main>
   </div>
 
-  <!-- Linking custom script -->
   <script src="script.js"></script>
 </body>
 </html>
