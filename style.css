@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -23,7 +26,7 @@
 }
 
 body {
-  background: var(--white-color);
+  background: var(#e8e6e6);
 }
 
 .container {
@@ -307,8 +310,6 @@ body.sidebar-hidden .main-layout .sidebar {
   display: block;
 }
 
-
-
 .video-list .video-card:hover .title {
   color: var(--primary-color);
 }
@@ -320,6 +321,39 @@ body.sidebar-hidden .main-layout .sidebar {
 
 .video-list .video-card .channel-name {
   margin: 0.25rem 0 0.15rem;
+}
+
+.section-box {
+  background: var(--very-light-aqua);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/*video box styles */
+
+.section-video-box {
+  background: var(--very-light-aqua);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 340px;
+  height: 320px;
+}
+
+/*shorts box styles */
+
+.section-short-box {
+  background: var(--very-light-aqua);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 340px;
+  height: 500px;
 }
 
 /*shorts styless */
@@ -341,7 +375,7 @@ body.sidebar-hidden .main-layout .sidebar {
 
 .short-list .short-card .thumbnail {
   width: 300px;
-  height: 400px;
+  height: 350px;
   object-fit: contain;
   border-radius: 0.5rem;
   aspect-ratio: 16 / 9;
@@ -399,386 +433,490 @@ body.sidebar-hidden .main-layout .sidebar {
 
 /* Subscriptions*/
 
-.wrapper{
-  max-width: 1090px;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.wrapper .table{
-  background: #fff;
-  width: calc(33% - 20px);
-  padding: 30px 30px;
-  position: relative;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-.table .price-section{
-  display: flex;
-  justify-content: center;
-}
-.table .price-area{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  padding: 2px;
-}
-.price-area .inner-area{
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  line-height: 117px;
+.sub-free-container {
+  width: 400px;
+  padding: 40px;
+  background: #ffffff;
   text-align: center;
-  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   position: relative;
 }
-.price-area .inner-area .text{
-  font-size: 25px;
-  font-weight: 400;
-  position: absolute;
-  top: -10px;
-  left: 17px;
+.sub-free-container .title {
+  font-size: 2rem;
+  color: #333;
 }
-.price-area .inner-area .price{
-  font-size: 45px;
-  font-weight: 500;
-  margin-left: 16px;
+.sub-free-container .price {
+  color: #025bff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 15px 0;
 }
-.table .package-name{
+.sub-free-container span {
+  font-size: 1.2rem;
+}
+.sub-free-container .description {
+  color: #3b3b3b;
+  font-size: 1.1rem;
+  margin: 20px 0 20px;
+}
+.sub-free-container .offer {
+  display: block;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 25px;
+}
+.subscribe-button {
+  display: inline-block;
+  padding: 15px 0;
+  background-color: #025bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 40px;
   width: 100%;
-  height: 2px;
-  margin: 35px 0;
-  position: relative;
-}
-.table .package-name::before{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 25px;
   font-weight: 500;
-  background: #fff;
-  padding: 0 15px;
-  transform: translate(-50%, -50%);
+  transition: 0.2s ease;
 }
-.table .features li{
-  margin-bottom: 15px;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
+.subscribe-button:hover {
+  background: #022d7f;
 }
-.features li .list-name{
-  font-size: 17px;
-  font-weight: 400;
-}
-.features li .icon{
-  font-size: 15px;
-}
-.features li .icon.check{
-  color: #2db94d;
-}
-.features li .icon.cross{
-  color: #cd3241;
-}
-.table .btn{
-  width: 100%;
-  display: flex;
-  margin-top: 35px;
-  justify-content: center;
-}
-.table .btn button{
-  width: 80%;
-  height: 50px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  border: none;
-  outline: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.table .btn button:hover{
-  border-radius: 5px;
-}
-.basic .features li::selection{
-  background: #3b82f6;
-}
-.basic ::selection,
-.basic .price-area,
-.basic .inner-area{
-  background: #3b82f6;
-}
-.basic .btn button{
-  border: 2px solid #3b82f6;
-  background: #fff;
-  color: #3b82f6;
-}
-.basic .btn button:hover{
-  background: #3b82f6;
-  color: #ffffff;
-}
-.premium ::selection,
-.premium .price-area,
-.premium .inner-area,
-.premium .btn button{
-  background: #a26bfa;
-}
-.premium .btn button:hover{
-  background: #833af8;
-}
-.ultimate ::selection,
-.ultimate .price-area,
-.ultimate .inner-area{
-  background: #01b3ff;
-}
-.ultimate .btn button{
-  border: 2px solid #01b3ff;
-  color: #01b3ff;
-  background: #fff;
-}
-.ultimate .btn button:hover{
-  background: #01b3ff;
-  color: #fff;
-}
-.basic .package-name{
-  background: #3b82f6;
-}
-.premium .package-name{
-  background: #d0b3ff;
-}
-.ultimate .package-name{
-  background: #01b3ff;
-}
-.basic .package-name::before{
-  content: "Basic";
-}
-.premium .package-name::before{
-  content: "Premium";
-  font-size: 24px;
-}
-.ultimate .package-name::before{
-  content: "Ultimate";
-  font-size: 24px;
-}
-@media (max-width: 1020px) {
-  .wrapper .table{
-    width: calc(50% - 20px);
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 698px) {
-  .wrapper .table{
-    width: 100%;
-  }
-}
-::selection{
-  color: #fff;
-}
-.table .ribbon{
+.ribbon-wrap {
   width: 150px;
   height: 150px;
   position: absolute;
   top: -10px;
   left: -10px;
-  overflow: hidden;
+  pointer-events: none;
 }
-.table .ribbon::before,
-.table .ribbon::after{
+.ribbon {
+  width: 230px;
+  font-size: 0.918rem;
+  text-align: center;
+  padding: 8px 0;
+  background: #025bff;
+  color: #fff;
   position: absolute;
-  content: "";
-  z-index: -1;
-  display: block;
-  border: 7px solid #4606ac;
-  border-top-color: transparent;
-  border-left-color: transparent;
-}
-.table .ribbon::before{
-  top: 0px;
-  right: 15px;
-}
-.table .ribbon::after{
-  bottom: 15px;
-  left: 0px;
-}
-.table .ribbon span{
-  position: absolute;
-  top: 30px;
-  right: 0;
   transform: rotate(-45deg);
-  width: 200px;
-  background: #a26bfa;
-  padding: 10px 0;
-  color: #fff;
-  text-align: center;
-  font-size: 17px;
-  text-transform: uppercase;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+  right: -17px;
+  top: 29%;
 }
 
-/* Login and signup forms */ 
 
-.container-forms{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e1e1e1;
-  column-gap: 30px;
-}
-.form{
-  position: absolute;
-  max-width: 430px;
-  width: 100%;
-  padding: 30px;
-  border-radius: 6px;
-  background: #FFF;
-}
-.form.signup{
-  opacity: 0;
-  pointer-events: none;
-}
-.forms.show-signup .form.signup{
-  opacity: 1;
-  pointer-events: auto;
-}
-.forms.show-signup .form.login{
-  opacity: 0;
-  pointer-events: none;
-}
-header{
-  font-size: 28px;
-  font-weight: 600;
-  color: #232836;
+.sub-basic-container {
+  width: 400px;
+  padding: 40px;
+  background: #ffffff;
   text-align: center;
-}
-form{
-  margin-top: 30px;
-}
-.form .field{
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   position: relative;
-  height: 50px;
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 6px;
+  margin-left: 410px;
+  margin-top: -442px;
 }
-.field input,
-.field button{
-  height: 100%;
-  width: 100%;
-  border: none;
-  font-size: 16px;
-  font-weight: 400;
-  border-radius: 6px;
+.sub-basic-container .title {
+  font-size: 2rem;
+  color: #333;
 }
-.field input{
-  outline: none;
-  padding: 0 15px;
-  border: 1px solid#CACACA;
+.sub-basic-container .price {
+  color: #025bff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 15px 0;
 }
-.field input:focus{
-  border-bottom-width: 2px;
+.sub-basic-container span {
+  font-size: 1.2rem;
 }
-.eye-icon{
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #8b8b8b;
-  cursor: pointer;
-  padding: 5px;
+.sub-basic-container .description {
+  color: #3b3b3b;
+  font-size: 1.1rem;
+  margin: 20px 0 20px;
 }
-.field button{
+.sub-basic-container .offer {
+  display: block;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 25px;
+}
+.subscribe-button {
+  display: inline-block;
+  padding: 15px 0;
+  background-color: #025bff;
   color: #fff;
-  background-color: #0171d3;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.2s ease;
 }
-.field button:hover{
-  background-color: #016dcb;
+.subscribe-button:hover {
+  background: #022d7f;
 }
-.form-link{
+.ribbon-wrap {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+}
+.ribbon {
+  width: 230px;
+  font-size: 0.918rem;
   text-align: center;
+  padding: 8px 0;
+  background: #025bff;
+  color: #fff;
+  position: absolute;
+  transform: rotate(-45deg);
+  right: -17px;
+  top: 29%;
+}
+
+
+.sub-standard-container {
+  width: 400px;
+  padding: 40px;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  position: relative;
   margin-top: 10px;
 }
-.form-link span,
-.form-link a{
-  font-size: 14px;
-  font-weight: 400;
-  color: #232836;
+.sub-standard-container .title {
+  font-size: 2rem;
+  color: #333;
 }
-.form a{
-  color: #0171d3;
-  text-decoration: none;
+.sub-standard-container .price {
+  color: #025bff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 15px 0;
 }
-.form-content a:hover{
-  text-decoration: underline;
+.sub-standard-container span {
+  font-size: 1.2rem;
 }
-.line{
-  position: relative;
-  height: 1px;
-  width: 100%;
-  margin: 36px 0;
-  background-color: #d4d4d4;
+.sub-standard-container .description {
+  color: #3b3b3b;
+  font-size: 1.1rem;
+  margin: 20px 0 20px;
 }
-.line::before{
-  content: 'Or';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #FFF;
-  color: #8b8b8b;
-  padding: 0 15px;
+.sub-standard-container .offer {
+  display: block;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 25px;
 }
-.media-options a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-a.facebook{
+.subscribe-button {
+  display: inline-block;
+  padding: 15px 0;
+  background-color: #025bff;
   color: #fff;
-  background-color: #4267b2;
-}
-a.facebook .facebook-icon{
-  height: 28px;
-  width: 28px;
-  color: #0171d3;
-  font-size: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-}
-.facebook-icon,
-img.google-img{
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-}
-img.google-img{
-  height: 20px;
-  width: 20px;
-  object-fit: cover;
-}
-a.google{
-  border: 1px solid #CACACA;
-}
-a.google span{
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  width: 100%;
   font-weight: 500;
-  opacity: 0.6;
-  color: #232836;
+  transition: 0.2s ease;
 }
-@media screen and (max-width: 400px) {
-  .form{
-      padding: 20px 10px;
+.subscribe-button:hover {
+  background: #022d7f;
+}
+.ribbon-wrap {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+}
+.ribbon {
+  width: 230px;
+  font-size: 0.918rem;
+  text-align: center;
+  padding: 8px 0;
+  background: #025bff;
+  color: #fff;
+  position: absolute;
+  transform: rotate(-45deg);
+  right: -17px;
+  top: 29%;
+}
+
+
+.sub-premium-container {
+  width: 400px;
+  padding: 40px;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin-left: 410px;
+  margin-top: -442px;
+}
+.sub-premium-container .title {
+  font-size: 2rem;
+  color: #333;
+}
+.sub-premium-container .price {
+  color: #025bff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 15px 0;
+}
+.sub-premium-container span {
+  font-size: 1.2rem;
+}
+.sub-premium-container .description {
+  color: #3b3b3b;
+  font-size: 1.1rem;
+  margin: 20px 0 20px;
+}
+.sub-premium-container .offer {
+  display: block;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 25px;
+}
+.subscribe-button {
+  display: inline-block;
+  padding: 15px 0;
+  background-color: #025bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  width: 100%;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.subscribe-button:hover {
+  background: #022d7f;
+}
+.ribbon-wrap {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+}
+.ribbon {
+  width: 230px;
+  font-size: 0.918rem;
+  text-align: center;
+  padding: 8px 0;
+  background: #025bff;
+  color: #fff;
+  position: absolute;
+  transform: rotate(-45deg);
+  right: -17px;
+  top: 29%;
+}
+
+/* Register form */ 
+
+
+.register-container{
+  width: 400px;
+  height: 560px;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+  border-width: 2px;
+  border-color: #000;
+  left: 500px;
+}
+.register-container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.register-container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.register-container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #025bff;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #0e3885;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #025bff;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #025bff;
+  background: #025bff;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #025bff;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
   }
-  
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #025bff;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+
+/* login-btn */
+
+.login-btn {
+  background-color: #3b82f6;
+  width: 70px;
+  height: 35px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #1866e2;
+  transform: scale(1.05);
+}
+
+.login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
 }
 
 /* Report form */ 
@@ -795,7 +933,7 @@ a.google span{
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -827,13 +965,13 @@ a.google span{
   padding: 0.75rem;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
 }
 
 .report-form button:hover {
-  background-color: #555;
+  background-color: #074fc2;
 }
 
 /* Help Form*/ 
@@ -848,6 +986,7 @@ a.google span{
 .help-form {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   padding: 2rem;
   max-width: 500px;
@@ -878,14 +1017,115 @@ a.google span{
   padding: 0.75rem;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
 }
 
 .help-form button:hover {
-  background-color: #555;
+  background-color: #074fc2;
 }
+
+/* Account page*/ 
+
+.account-page {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.account-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.profile-details p {
+  margin: 5px 0;
+}
+
+.account-settings,
+.security-settings {
+  margin-top: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.logout-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
 
 /* feedback form */ 
 
@@ -896,6 +1136,7 @@ a.google span{
 
 .feedback-form {
   background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 2rem;
@@ -949,7 +1190,7 @@ a.google span{
 }
 
 .feedback-form button {
-  background-color: #333;
+  background-color: #3b82f6;
   color: #fff;
   padding: 0.75rem;
   border: none;
@@ -958,7 +1199,7 @@ a.google span{
 }
 
 .feedback-form button:hover {
-  background-color: #555;
+  background-color: #074fc2;
 }
 
 /* Responsive media code for small devices */
