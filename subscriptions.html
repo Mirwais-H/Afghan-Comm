@@ -8,6 +8,7 @@
   <!-- Linking Unicons For Icons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="sidebar-hidden">
   <div class="container">
@@ -134,13 +135,12 @@
       
               <div class="card">
                 <div class="card__header">
-                  <div class="card__icon symbol symbol--rounded"></div>
                   <h2>Free</h2>
                 </div>
                 <div class="card__desc">Discover the essentials of Afghan Comm with our Free Plan, designed to give you a taste of our vibrant community.</div>
               </div>
       
-              <div class="price">$1.99<span>/ month</span></div>
+              <div class="price">$0<span>/ month</span></div>
       
               <ul class="featureList">
                 <li>Access to free courses only</li>
@@ -158,21 +158,20 @@
             <div class="planItem planItem--pro">
               <div class="card">
                 <div class="card__header">
-                  <div class="card__icon symbol"></div>
                   <h2>Pro</h2>
                   <div class="card__label label">Best Value</div>
                 </div>
-                <div class="card__desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</div>
+                <div class="card__desc">Discover the essentials of Afghan Comm with our Free Plan, designed to give you a taste of our vibrant community.</div>
               </div>
       
-              <div class="price">$19.99<span>/ month</span></div>
+              <div class="price">$4.99<span>/ month</span></div>
       
               <ul class="featureList">
-                <li>2 links</li>
-                <li>Own analytics platform</li>
-                <li>Chat support</li>
-                <li class="disabled">Mobile application</li>
-                <li class="disabled">Unlimited users</li>
+                <li>Access to free courses only</li>
+                <li>Limited access to essentials </li>
+                <li>24/7 Chat support</li>
+                <li class="disabled">Free event tickets</li>
+                <li>Full access to resources</li>
               </ul>
       
               <button class="button button--pink">Get Started</button>
@@ -183,13 +182,12 @@
             <div class="planItem planItem--entp">
               <div class="card">
                 <div class="card__header">
-                  <div class="card__icon " ></div>
                   <h2>Enterprise</h2>
                 </div>
-                <div class="card__desc">Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</div>
+                <div class="card__desc">Discover the essentials of Afghan Comm with our Free Plan, designed to give you a taste of our vibrant community.</div>
               </div>
       
-              <div class="price">49.99<span>/ month</span></div>
+              <div class="price">9.99<span>/ month</span></div>
       
               <ul class="featureList" >
                 <li>2 links</li>
@@ -199,8 +197,9 @@
                 <li>Unlimited users</li>
                 <li class="disabled">Customize Panel</li>
               </ul>
-      
-              <button class="button button--pink">Get Started</button>
+              <a href="payment.html">
+                <button type="button" class="button button--pink">Get Started</button>
+              </a>
             </div>
             <!--entp plan ends -->
       
@@ -209,6 +208,25 @@
       </section>
       
       </div>
+
+            <!-- Chatbot Widget -->
+            <div class="chatbot-container">
+              <div class="chatbot-header">
+                  <h3>Chat with us!</h3>
+                  <button id="close-chatbot">&times;</button>
+              </div>
+              <div class="chatbot-messages" id="chatbot-messages">
+                  <!-- Chat messages will appear here -->
+              </div>
+              <div class="chatbot-input">
+                  <input type="text" id="user-input" placeholder="Type your message...">
+                  <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+              </div>
+          </div>
+    
+          <!-- Chatbot Toggle Button -->
+          <button id="open-chatbot"><i class="fas fa-comment"></i></button>
+
     </main>
   </div>
 
