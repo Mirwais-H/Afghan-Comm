@@ -132,19 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
           // Other bot responses
           if (lowerCaseMessage.includes('about your website') || lowerCaseMessage.includes('what does your website do') || lowerCaseMessage.includes('what is this website')) {
-              botResponse = "Our website offers resources including news, courses, and events tailored for the Afghan community. Visit our <a href='/public/index.html'>home</a> page for more details.";
+              botResponse = "Our website offers resources including news, courses, and events tailored for the Afghan community. Visit our <a href='index.html'>home</a> page for more details.";
           } else if (lowerCaseMessage.includes('news') || lowerCaseMessage.includes('latest news') || lowerCaseMessage.includes('updates')) {
-              botResponse = "You can check out the latest news on our <a href='/news.html'>news</a> page.";
+              botResponse = "You can check out the latest news on our <a href='news.html'>news</a> page.";
           } else if (lowerCaseMessage.includes('how are you') || lowerCaseMessage.includes('how are you doing') || lowerCaseMessage.includes('how is it going') || lowerCaseMessage.includes("what's up")) {
               botResponse = "I am good, Thanks for asking. What can I help you with today?";    
           } else if (lowerCaseMessage.includes('courses') || lowerCaseMessage.includes('learning') || lowerCaseMessage.includes('education') || lowerCaseMessage.includes('course')) {
-              botResponse = "Explore our courses on the <a href='/courses.html'>courses</a> page.";
+              botResponse = "Explore our courses on the <a href='courses.html'>courses</a> page.";
           } else if (lowerCaseMessage.includes('resources') || lowerCaseMessage.includes('important resources') || lowerCaseMessage.includes('low income families') || lowerCaseMessage.includes('sources') || lowerCaseMessage.includes('resource')){
-              botResponse = "Check out our <a href='/public/resources.html'>resources</a> page for new and upcoming resources.";
+              botResponse = "Check out our <a href='resources.html'>resources</a> page for new and upcoming resources.";
           } else if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('contact') || lowerCaseMessage.includes('get in touch') || lowerCaseMessage.includes('support') || lowerCaseMessage.includes('operator')) {
-              botResponse = "You can contact us by filling out the help form in our <a href="help.html">help</a> page.";
+              botResponse = "You can contact us by filling out the help form in our <a href='help.html'>help</a> page.";
           } else if (lowerCaseMessage.includes('membership') || lowerCaseMessage.includes('subscription') || lowerCaseMessage.includes('subscriptions') || lowerCaseMessage.includes('memberships')) {
-              botResponse = "Learn more about our subscription plans on the <a href='/public/subscriptions.html'>subscription</a> page.";
+              botResponse = "Learn more about our subscription plans on the <a href='subscriptions.html'>subscription</a> page.";
 
           // Questions about the bot
           } else if (lowerCaseMessage.includes('who are you') || lowerCaseMessage.includes('what is your name')) {
