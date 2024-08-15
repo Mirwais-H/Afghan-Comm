@@ -1013,12 +1013,12 @@ button:hover {
 
 .message.user {
   align-items: flex-end; /* Align user messages to the right */
-  color: #000000;
+  color: #ffffff;
 }
 
 .message.bot {
   align-items: flex-start; /* Align bot messages to the left */
-  color: #ffffff;
+  color: #000000;
 }
 
 .user-message, .bot-message {
@@ -1030,13 +1030,13 @@ button:hover {
 }
 
 .user-message {
-  background-color: #00e0fd; /* Light color for user messages */
+  background-color: #007BFF; /* Light color for user messages */
   border-radius: 10px 0 10px 10px;
   text-align: right; /* Align text to the right */
 }
 
 .bot-message {
-  background-color: #007BFF; /* Light color for bot messages */
+  background-color: #f4f1f1; /* Light color for bot messages */
   border-radius: 0 10px 10px 10px;
   text-align: left; /* Align text to the left */
 }
