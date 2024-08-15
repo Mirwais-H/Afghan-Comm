@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } else if (lowerCaseMessage.includes('resources') || lowerCaseMessage.includes('important resources') || lowerCaseMessage.includes('low income families') || lowerCaseMessage.includes('sources') || lowerCaseMessage.includes('resource')){
               botResponse = "Check out our <a href='/public/resources.html'>resources</a> page for new and upcoming resources.";
           } else if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('contact') || lowerCaseMessage.includes('get in touch') || lowerCaseMessage.includes('support') || lowerCaseMessage.includes('operator')) {
-              botResponse = "You can contact us by filling out the help form in our <a href='/public/help.html'>help</a> page.";
+              botResponse = "You can contact us by filling out the help form in our <a href='/help.html'>help</a> page.";
           } else if (lowerCaseMessage.includes('membership') || lowerCaseMessage.includes('subscription') || lowerCaseMessage.includes('subscriptions') || lowerCaseMessage.includes('memberships')) {
               botResponse = "Learn more about our subscription plans on the <a href='/public/subscriptions.html'>subscription</a> page.";
 
