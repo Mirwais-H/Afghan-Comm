@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to send the introductory message
   function sendIntroductionMessage() {
-      const introMessage = "Hello 👋! I'm Afg assist, your friendly chatbot. I will be assisting you today, I will do my best to answer your questions but if you ever need help from the admin/operator just say 'Operator' or fill out the help form in the <a href='/public/help.html'>help</a> page. ";
+      const introMessage = "Hello 👋! I'm Afg assist, your friendly chatbot. I will be assisting you today, I will do my best to answer your questions but if you ever need help from the admin/operator just say 'Operator' or fill out the help form in the <a href='help.html'>help</a> page. ";
       addMessage('bot', introMessage);
   }
 
