@@ -106,25 +106,6 @@ async function getWeather() {
     }
 }
 
-// Login route
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    // Handle login logic here
-    console.log(`Login attempt with username: ${username}`);
-    res.send('Login successful');
-});
-
-// Signup route
-app.post('/signup', (req, res) => {
-    const { firstName, lastName, email, username, password, confirmPassword } = req.body;
-    // Handle signup logic here
-    console.log(`Signup attempt with username: ${username}`);
-    if (password === confirmPassword) {
-        res.send('Signup successful');
-    } else {
-        res.status(400).send('Passwords do not match');
-    }
-});
 
 // Start server
 app.listen(port, () => {
