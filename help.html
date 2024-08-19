@@ -26,21 +26,58 @@
         </div>
         
         <div class="nav-section nav-center">
-          <form action="#" class="search-form">
-            <input type="search" placeholder="Search..." class="search-input" required>
-            <button class="nav-button search-button">
-              <i class="uil uil-search"></i>
-            </button>
-          </form>
+          <div id="search">
+            <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
+              <rect class="bar"/>
+              
+              <g class="magnifier">
+                <circle class="glass"/>
+                <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
+              </g>
+          
+              <g class="sparks">
+                <circle class="spark"/>
+                <circle class="spark"/>
+                <circle class="spark"/>
+              </g>
+          
+              <g class="burst pattern-one">
+                <circle class="particle circle"/>
+                <path class="particle triangle"/>
+                <circle class="particle circle"/>
+                <path class="particle plus"/>
+                <rect class="particle rect"/>
+                <path class="particle triangle"/>
+              </g>
+              <g class="burst pattern-two">
+                <path class="particle plus"/>
+                <circle class="particle circle"/>
+                <path class="particle triangle"/>
+                <rect class="particle rect"/>
+                <circle class="particle circle"/>
+                <path class="particle plus"/>
+              </g>
+              <g class="burst pattern-three">
+                <circle class="particle circle"/>
+                <rect class="particle rect"/>
+                <path class="particle plus"/>
+                <path class="particle triangle"/>
+                <rect class="particle rect"/>
+                <path class="particle plus"/>
+              </g>
+            </svg>
+            <input type=search name=q aria-label="Search for inspiration"/>
+          </div>
+          
+          <div id="results">
+            
+          </div>
         </div>
         
         <div class="nav-section nav-right">
-          <button class="nav-button search-button">
-            <i class="uil uil-search"></i>
-          </button>
           <a href="login.html">
             <button type="button" class="login-btn">login</button>
-          </a>        
+          </a>
         </div>
         
       </nav>
@@ -130,18 +167,20 @@
       <!-- Help Form -->
       <section class="help-form-section">
         <form id="help-form" class="help-form" action="https://formspree.io/f/meojeoqb" method="POST">
-          <h2>Help Form</h2>
+          <div class="help-header">
+            <h2>Help Form</h2>
+          </div>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+          <input type="name" id="name" name="name" required>
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="_replyto" required>
 
           <label for="issue">Issue:</label>
-          <input type="text" id="issue" name="issue" required>
+          <input type="name" id="issue" name="issue" required>
 
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <textarea id="message" name="message" rows="3" required></textarea>
 
           <button type="submit">Submit</button>
         </form>
