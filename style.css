@@ -7,6 +7,7 @@
 @import url('https:/*fonts.googleapis.com/css2?family=Noto */+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 @import url('https:/*fonts.googleapis.com/css2?family=Nuni */to:wght@200;300;400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 
 
@@ -109,44 +110,219 @@ header, .sidebar .nav-left, .category-list {
   justify-content: center;
 }
 
-.navbar .search-form {
-  flex: 1;
-  height: 40px;
-  max-width: 550px;
+#search {
+	display: grid;
+	grid-area: search;
+	grid-template:
+		"search" 40px
+		/ 290px;
+	justify-content: center;
+	align-content: center;
+	justify-items: stretch;
+	align-items: stretch;
+	background: hsl(0, 0%, 99%);
 }
 
-.navbar .search-form .search-input {
-  width: 100%;
-  height: 100%;
-  font-size: 1rem;
-  padding: 0 1rem;
-  outline: none;
-  color: var(--black-color);
-  background: var(--white-color);
-  border-radius: 3.1rem 0 0 3.1rem;
-  border: 1px solid var(--border-color);
+#search input {
+	display: block;
+	grid-area: search;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 289.1px;
+	height: 50px;
+  margin-top: -5px;
+  margin-left: .8px;
+	background: none;
+	padding: 0px 30px 2px 40px;
+	border: none;
+	border-radius: 100px;
+	font: 16px system-ui, sans-serif;
+	outline-offset: -8px;
 }
 
-.navbar .search-form .search-input:focus {
-  border-color: var(--primary-color);
+
+#search svg {
+	grid-area: search;
+	overflow: visible;
+	color: hsl(215, 100%, 50%);
+	fill: none;
+	stroke: currentColor;
 }
 
-.navbar .search-form .search-button {
-  height: 40px;
-  width: auto;
-  padding: 0 1.25rem;
-  border-radius: 0 3.1rem 3.1rem 0;
-  border: 1px solid var(--border-color);
-  border-left: 0;
+.spark {
+	fill: currentColor;
+	stroke: none;
+	r: 15;
 }
 
-.navbar .nav-center .mic-button {
-  background: var(--light-white-color);
+.spark:nth-child(1) {
+	animation:
+		spark-radius 2.03s 1s both,
+		spark-one-motion 2s 1s both;
 }
 
-.navbar .nav-right .search-button {
-  display: none;
+@keyframes spark-radius {
+	0% { r: 0; animation-timing-function: cubic-bezier(0, 0.3, 0, 1.57) }
+	30% { r: 15; animation-timing-function: cubic-bezier(1, -0.39, 0.68, 1.04) }
+	95% { r: 8 }
+	99% { r: 10 }
+	99.99% { r: 7 }
+	100% { r: 0 }
 }
+
+@keyframes spark-one-motion {
+	0% { transform: translate(-20%, 50%); animation-timing-function: cubic-bezier(0.63, 0.88, 0, 1.25) }
+	20% { transform: rotate(-0deg) translate(0%, -50%); animation-timing-function: ease-in }
+	80% { transform: rotate(-230deg) translateX(-20%) rotate(-100deg) translateX(15%); animation-timing-function: linear }
+	100% { transform: rotate(-360deg) translate(30px, 100%); animation-timing-function: cubic-bezier(.64,.66,0,.51) }
+}
+
+.spark:nth-child(2) {
+	animation:
+		spark-radius 2.03s 1s both,
+		spark-two-motion 2.03s 1s both;
+}
+
+@keyframes spark-two-motion {
+	0% { transform: translate(120%, 50%) rotate(-70deg) translateY(0%); animation-timing-function: cubic-bezier(0.36, 0.18, 0.94, 0.55) }
+	20% { transform: translate(90%, -80%) rotate(60deg) translateY(-80%); animation-timing-function: cubic-bezier(0.16, 0.77, 1, 0.4) }
+	40% { transform: translate(110%, -50%) rotate(-30deg) translateY(-120%); animation-timing-function: linear }
+	70% { transform: translate(100%, -50%) rotate(120deg) translateY(-100%); animation-timing-function: linear }
+	80% { transform: translate(95%, 50%) rotate(80deg) translateY(-150%); animation-timing-function: cubic-bezier(.64,.66,0,.51) }
+	100% { transform: translate(100%, 50%) rotate(120deg) translateY(0%) }
+}
+
+.spark:nth-child(3) {
+	animation:
+		spark-radius 2.05s 1s both,
+		spark-three-motion 2.03s 1s both;
+}
+
+@keyframes spark-three-motion {
+	0% { transform: translate(50%, 100%) rotate(-40deg) translateX(0%); animation-timing-function: cubic-bezier(0.62, 0.56, 1, 0.54) }
+	30% { transform: translate(40%, 70%) rotate(20deg) translateX(20%); animation-timing-function: cubic-bezier(0, 0.21, 0.88, 0.46) }
+	40% { transform: translate(65%, 20%) rotate(-50deg) translateX(15%); animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62) }
+	60% { transform: translate(60%, -40%) rotate(-50deg) translateX(20%); animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62) }
+	70% { transform: translate(70%, -0%) rotate(-180deg) translateX(20%); animation-timing-function: cubic-bezier(0.15, 0.48, 0.76, 0.26) }
+	100% { transform: translate(70%, -0%) rotate(-360deg) translateX(0%) rotate(180deg) translateX(20%); }
+}
+
+
+
+
+.burst {
+	stroke-width: 3;
+}
+
+.burst :nth-child(2n) { color: #ff783e }
+.burst :nth-child(3n) { color: #ffab00 }
+.burst :nth-child(4n) { color: #55e214 }
+.burst :nth-child(5n) { color: #82d9f5 }
+
+.circle {
+	r: 6;
+}
+
+.rect {
+	width: 10px;
+	height: 10px;
+}
+
+.triangle {
+	d: path("M0,-6 L7,6 L-7,6 Z");
+	stroke-linejoin: round;
+}
+
+.plus {
+	d: path("M0,-5 L0,5 M-5,0L 5,0");
+	stroke-linecap: round;
+}
+
+
+
+
+.burst:nth-child(4) {
+	transform: translate(30px, 100%) rotate(150deg);
+}
+
+.burst:nth-child(5) {
+	transform: translate(50%, 0%) rotate(-20deg);
+}
+
+.burst:nth-child(6) {
+	transform: translate(100%, 50%) rotate(75deg);
+}
+
+.burst * {
+  
+}
+
+@keyframes particle-fade {
+	0%, 100% { opacity: 0 }
+	5%, 80% { opacity: 1 }
+}
+
+.burst :nth-child(1) { animation: particle-fade 600ms 2.95s both, particle-one-move 600ms 2.95s both; }
+.burst :nth-child(2) { animation: particle-fade 600ms 2.95s both, particle-two-move 600ms 2.95s both; }
+.burst :nth-child(3) { animation: particle-fade 600ms 2.95s both, particle-three-move 600ms 2.95s both; }
+.burst :nth-child(4) { animation: particle-fade 600ms 2.95s both, particle-four-move 600ms 2.95s both; }
+.burst :nth-child(5) { animation: particle-fade 600ms 2.95s both, particle-five-move 600ms 2.95s both; }
+.burst :nth-child(6) { animation: particle-fade 600ms 2.95s both, particle-six-move 600ms 2.95s both; }
+
+@keyframes particle-one-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(-20deg) translateX(8%) scale(0.5, 0.5) } }
+@keyframes particle-two-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(0deg) translateX(8%) scale(0.5, 0.5) } }
+@keyframes particle-three-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(20deg) translateX(8%) scale(0.5, 0.5) } }
+@keyframes particle-four-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(-35deg) translateX(12%) } }
+@keyframes particle-five-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(0deg) translateX(12%) } }
+@keyframes particle-six-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(35deg) translateX(12%) } }
+
+
+
+.bar {
+	width: 100%;
+	height: 100%;
+	ry: 50%;
+	stroke-width: 3;
+	animation: bar-in 900ms 3s both;
+}
+
+@keyframes bar-in {
+	0% { stroke-dasharray: 0 180 0 226 0 405 0 0 }
+	100% { stroke-dasharray: 0 0 181 0 227 0 405 0 }
+}
+
+.magnifier {
+	animation: magnifier-in 600ms 3.6s both;
+	transform-box: fill-box;
+}
+
+@keyframes magnifier-in {
+	0% { transform: translate(20px, 8px) rotate(-45deg) scale(0.01, 0.01); }
+	50% { transform: translate(-4px, 8px) rotate(-45deg); }
+	100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.magnifier .glass {
+	cx: 27;
+	cy: 27;
+	r: 8;
+	stroke-width: 3;
+}
+.magnifier .handle {
+	x1: 32;
+	y1: 32;
+	x2: 44;
+	y2: 44;
+	stroke-width: 3;
+}
+
+
+
+#results {
+	grid-area: results;
+	background: hsl(0, 0%, 95%);
+}
+
 
 .main-layout {
   display: flex;
@@ -236,7 +412,7 @@ body.sidebar-hidden .main-layout .sidebar {
   cursor: pointer;
   font-weight: 500;
   font-size: 0.94rem;
-  border-radius: 0.5rem;
+  border-radius: 50px;
   white-space: nowrap;
   color: var(--black-color);
   padding: 0.4rem 0.75rem;
@@ -481,7 +657,7 @@ body {
   --boxShadow: none;
   background-color: var(--bgColor);
   border: var(--border);
-  border-radius: 1rem;
+  border-radius: 50px;
   box-shadow: var(--boxShadow);
   padding: 2rem 1.5rem;
   display: inline-flex;
@@ -529,7 +705,7 @@ body {
   --color: var(--pink);
   --shadowColor: rgba(234, 76, 137, 0.3);
   --outline: var(--pink);
-  border-radius: 0.5rem;
+  border-radius: 50px;
   display: block;
   width: 100%;
   padding: 1rem 1.5rem;
@@ -826,8 +1002,6 @@ button:hover {
 }
 
 
-
-
 /* login-btn */
 
 .login-btn {
@@ -836,8 +1010,9 @@ button:hover {
   height: 35px;
   text-align: center;
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 50px;
   border: none;
+  font-size: 15px;
 }
 
 .login-btn:hover {
@@ -860,9 +1035,13 @@ button:hover {
   padding: 2rem;
 }
 
+.report-header {
+  text-align: center;
+}
+
 .report-form {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -870,6 +1049,8 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 400px;
   width: 100%;
+  text-align: left;
+  align-items: center;
 }
 
 .report-form h2 {
@@ -887,18 +1068,20 @@ button:hover {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 0.5px solid rgb(133, 129, 129);
-  border-radius: 5px;
+  border: 0.5px solid rgb(0, 0, 0);
+  border-radius: 50px;
 }
 
 .report-form button {
-  width: 100%;
+  width: 200px;
   padding: 0.75rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
+  font-size: 20px;
+  margin-left: 70px;
 }
 
 .report-form button:hover {
@@ -914,15 +1097,21 @@ button:hover {
   padding: 2rem;
 }
 
+.help-header {
+  background-color: white;
+  text-align: center;
+}
+
 .help-form {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   padding: 2rem;
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .help-form h2 {
@@ -933,6 +1122,7 @@ button:hover {
 .help-form label {
   display: block;
   margin-bottom: 0.5rem;
+  text-decoration-color: #000;
 }
 
 .help-form input,
@@ -940,17 +1130,20 @@ button:hover {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 0.5px solid rgb(133, 129, 129);
-  border-radius: 5px;
+  border: 0.5px solid rgb(0, 0, 0);
+  border-radius: 50px;
 }
 
 .help-form button {
   padding: 0.75rem;
+  width: 200px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
+  font-size: 20px;
+  margin-left: 70px;
 }
 
 .help-form button:hover {
@@ -958,15 +1151,16 @@ button:hover {
 }
 
 
-/* Chatbot Container */
-.chatbot-container {
+
+ /* Chatbot Container */
+ .chatbot-container {
   width: 300px;
   height: 400px;
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
@@ -990,7 +1184,7 @@ button:hover {
 .chatbot-header #close-chatbot {
   position: absolute;
   right: -130px;
-  top: -6px;
+  top: -8px;
   background: none;
   border: none;
   color: white;
@@ -1031,13 +1225,13 @@ button:hover {
 
 .user-message {
   background-color: #007BFF; /* Light color for user messages */
-  border-radius: 10px 0 10px 10px;
+  border-radius: 10px 10px 0 10px;
   text-align: right; /* Align text to the right */
 }
 
 .bot-message {
   background-color: #f4f1f1; /* Light color for bot messages */
-  border-radius: 0 10px 10px 10px;
+  border-radius: 10px 10px 10px 0;
   text-align: left; /* Align text to the left */
 }
 
@@ -1123,6 +1317,7 @@ button:hover {
 #open-chatbot i {
   margin: 0;
 }
+
 
 
 
@@ -1358,15 +1553,20 @@ h3 {
   padding: 2rem;
 }
 
+.feed-header {
+  text-align: center;
+}
+
 .feedback-form {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
+  text-align: left;
 }
 
 .feedback-form h2 {
@@ -1383,7 +1583,8 @@ h3 {
 .feedback-form select {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 50px;
+  border: 0.5px solid rgb(0, 0, 0);
 }
 .rating {
   direction: rtl;
@@ -1418,8 +1619,11 @@ h3 {
   color: #fff;
   padding: 0.75rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
+  font-size: 20px;
+  width: 250px;
+  margin-left: 50px;
 }
 
 .feedback-form button:hover {
