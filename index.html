@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="sidebar-hidden">
   <div class="container">
@@ -27,18 +26,55 @@
         </div>
         
         <div class="nav-section nav-center">
-          <form action="#" class="search-form">
-            <input type="search" placeholder="Search..." class="search-input" required>
-            <button class="nav-button search-button">
-              <i class="uil uil-search"></i>
-            </button>
-          </form>
+          <div id="search">
+            <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
+              <rect class="bar"/>
+              
+              <g class="magnifier">
+                <circle class="glass"/>
+                <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
+              </g>
+          
+              <g class="sparks">
+                <circle class="spark"/>
+                <circle class="spark"/>
+                <circle class="spark"/>
+              </g>
+          
+              <g class="burst pattern-one">
+                <circle class="particle circle"/>
+                <path class="particle triangle"/>
+                <circle class="particle circle"/>
+                <path class="particle plus"/>
+                <rect class="particle rect"/>
+                <path class="particle triangle"/>
+              </g>
+              <g class="burst pattern-two">
+                <path class="particle plus"/>
+                <circle class="particle circle"/>
+                <path class="particle triangle"/>
+                <rect class="particle rect"/>
+                <circle class="particle circle"/>
+                <path class="particle plus"/>
+              </g>
+              <g class="burst pattern-three">
+                <circle class="particle circle"/>
+                <rect class="particle rect"/>
+                <path class="particle plus"/>
+                <path class="particle triangle"/>
+                <rect class="particle rect"/>
+                <path class="particle plus"/>
+              </g>
+            </svg>
+            <input type=search name=q aria-label="Search for inspiration"/>
+          </div>
+          
+          <div id="results">
+            
+          </div>
         </div>
         
         <div class="nav-section nav-right">
-          <button class="nav-button search-button">
-            <i class="uil uil-search"></i>
-          </button>
           <a href="login.html">
             <button type="button" class="login-btn">login</button>
           </a>
@@ -96,7 +132,7 @@
             <a href="courses.html" class="link-item">
                 <i class="uil uil-graduation-cap"></i> Courses
             </a>
-            <a href="resources.html" class="link-item">
+            <a href="http://localhost:5177/chat-app/" class="link-item">
                 <i class="uil uil-servers"></i> Resources
             </a>
           </div>
@@ -205,24 +241,25 @@
             </div>  
         </div>
         
-            <!-- Chatbot Widget -->
-            <div class="chatbot-container">
-              <div class="chatbot-header">
-                  <h3>Chat with us!</h3>
-                  <button id="close-chatbot">&times;</button>
-              </div>
-              <div class="chatbot-messages" id="chatbot-messages">
-                  <!-- Chat messages will appear here -->
-              </div>
-              <div class="chatbot-input">
-                  <input type="text" id="user-input" placeholder="Type your message...">
-                  <button id="send-message"><i class="fas fa-paper-plane"></i></button>
-              </div>
+          <!-- Chatbot Widget -->
+          <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>Chat with us!</h3>
+                <button id="close-chatbot">&times;</button>
             </div>
-    
-          <!-- Chatbot Toggle Button -->
-          <button id="open-chatbot"><i class="fas fa-comment"></i></button>
-        
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+  
+        <!-- Chatbot Toggle Button -->
+        <button id="open-chatbot"><i class="fas fa-comment"></i></button>
+  
+
       </div>
     </main>
   </div>
