@@ -9,260 +9,68 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
 </head>
-<body class="sidebar-hidden">
-  <div class="container">
-    <!-- Header / Navbar -->
-    <header>
-      <nav class="navbar">
-        <div class="nav-section nav-left">
-          <button class="nav-button menu-button">
-            <i class="uil uil-bars"></i>
-          </button>
-          <a href="#" class="nav-logo">
-            <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="user-image">
-            <h2 class="logo-text">Afghan Comm</h2>
-          </a>
-        </div>
-        
-        <div class="nav-section nav-center">
-          <div id="search">
-            <svg viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg">
-              <rect class="bar"/>
-              
-              <g class="magnifier">
-                <circle class="glass"/>
-                <line class="handle" x1="32" y1="32" x2="44" y2="44"></line>
-              </g>
-          
-              <g class="sparks">
-                <circle class="spark"/>
-                <circle class="spark"/>
-                <circle class="spark"/>
-              </g>
-          
-              <g class="burst pattern-one">
-                <circle class="particle circle"/>
-                <path class="particle triangle"/>
-                <circle class="particle circle"/>
-                <path class="particle plus"/>
-                <rect class="particle rect"/>
-                <path class="particle triangle"/>
-              </g>
-              <g class="burst pattern-two">
-                <path class="particle plus"/>
-                <circle class="particle circle"/>
-                <path class="particle triangle"/>
-                <rect class="particle rect"/>
-                <circle class="particle circle"/>
-                <path class="particle plus"/>
-              </g>
-              <g class="burst pattern-three">
-                <circle class="particle circle"/>
-                <rect class="particle rect"/>
-                <path class="particle plus"/>
-                <path class="particle triangle"/>
-                <rect class="particle rect"/>
-                <path class="particle plus"/>
-              </g>
-            </svg>
-            <input type=search name=q aria-label="Search for inspiration"/>
-          </div>
-          
-          <div id="results">
-            
-          </div>
-        </div>
-        
-        <div class="nav-section nav-right">
-          <a href="login.html">
-            <button type="button" class="login-btn">login</button>
-          </a>
-        </div>
-        
-      </nav>
-    </header>
+<body>
+  <header>
+    <div class="container">
+      <button class="menuBtn" id="menuBtn">
+        <i class="uil uil-list-ul"></i>
+      </button>
     
-    <!-- Main Layout -->
-    <main class="main-layout">
-      <div class="screen-overlay"></div>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="nav-section nav-left">
-          <button class="nav-button menu-button">
-            <i class="uil uil-bars"></i>
-          </button>
-          <a href="#" class="nav-logo">
-            <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="user-image">
-            <h2 class="logo-text">Afghan Comm</h2>
-          </a>
-        </div>
-  
-        <div class="links-container">
-          <div class="link-section">
-            <a href="index.html" class="link-item">
-              <i class="uil uil-estate"></i> Home
-            </a>
-            <a href="shorts.html" class="link-item">
-              <i class="uil uil-video"></i> Shorts
-            </a>
-            <a href="subscriptions.html" class="link-item">
-              <i class="uil uil-tv-retro"></i> Subscriptions
-            </a>
-          </div>
-          <div class="section-separator"></div>
-  
-          <div class="link-section">
-            <h4 class="section-title">You</h4>
-            <a href="account.html" class="link-item">
-              <i class="uil uil-user-square"></i> Your account
-            </a>
-          </div>
-          <div class="section-separator"></div>
-          
-          <div class="link-section">
-            <h4 class="section-title">Explore</h4>
-            <a href="forum.html" class="link-item">
-              <i class="uil uil-chat"></i> Forum
-            </a>
-            <a href="news.html" class="link-item">
-                <i class="uil uil-newspaper"></i> News
-            </a>
-            <a href="courses.html" class="link-item">
-                <i class="uil uil-graduation-cap"></i> Courses
-            </a>
-            <a href="http://localhost:5177/chat-app/" class="link-item">
-                <i class="uil uil-servers"></i> Resources
-            </a>
-          </div>
-
-          <div class="section-separator"></div>
-  
-          <div class="link-section">
-            <a href="settings.html" class="link-item">
-              <i class="uil uil-setting"></i> Settings
-            </a>
-            <a href="report.html" class="link-item">
-              <i class="uil uil-file-medical-alt"></i> Report
-            </a>
-            <a href="help.html" class="link-item">
-              <i class="uil uil-question-circle"></i> Help
-            </a>
-            <a href="feedback.html" class="link-item">
-              <i class="uil uil-exclamation-triangle"></i> Feedback
-            </a>
-            <a href="privacy.html" class="link-item">
-                <i class="uil uil-file-lock-alt"></i> Privacy Policy
-            </a>
-            <a href="terms.html" class="link-item">
-                <i class="uil uil-file-check-alt"></i> Terms and Conditions
-            </a>
-          </div>
-        </div>
-      </aside>
-  
-      <div class="content-wrapper">
-        <!-- Category List -->
-        <div class="category-list">
-          <button class="category-button active">All</button>
-          <button class="category-button">News</button>
-          <button class="category-button">Courses</button>
-          <button class="category-button">Resources</button>
-          <button class="category-button">Shorts</button>  
-          <button class="category-button">News</button>
-          <button class="category-button">Courses</button>
-          <button class="category-button">Resources</button>
-          <button class="category-button">Shorts</button>         
-        </div>
-        
-        <!-- Video List -->
-        <div class="section-box" id="news">   
-          <h1 class="title">News</h1>
-            <div class="section-video-box" id="vedio-list">  
-              <div class="video-list">
-                <a href="https://go.screenpal.com/player/cZiYfTVPYwA?width=100%&height=100%&ff=1&title=0"class="video-card">
-                  <div class="thumbnail-container">
-                    <img src="https://i.ibb.co/d4sxr0f/hq720.webp" alt="Video Thumbnail" class="thumbnail">
-                    <p class="duration">01:37:34</p>
-                  </div>
-                  <div class="video-info">
-                    <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="Channel Logo" class="icon">
-                    <div class="video-details">
-                      <h2 class="title">Afghanistan is NOT What You Think! (Full Documentary)</h2>
-                      <p class="channel-name">Afghan Comm</p>
-                      <p class="views">1.3M Views • 1 year ago</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>  
-        </div>  
-        <div class="section-box" id="courses">  
-          <h1 class="title">Courses</h1>
-            <div class="section-video-box" id="vedio-list">
-              <div class="video-list">
-                <a href="https://youtu.be/VMUx7s6mgH8?feature=shared" class="video-card">
-                  <div class="thumbnail-container">
-                    <img src="https://i.ibb.co/d4sxr0f/hq720.webp" alt="Video Thumbnail" class="thumbnail">
-                    <p class="duration">01:37:34</p>
-                  </div>
-                  <div class="video-info">
-                    <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="Channel Logo" class="icon">
-                    <div class="video-details">
-                      <h2 class="title">Afghanistan is NOT What You Think! (Full Documentary)</h2>
-                      <p class="channel-name">Afghan Comm</p>
-                      <p class="views">1.3M Views • 1 year ago</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>  
-        </div>
-        <div class="section-box" id="resources">    
-          <h1 class="title">Resources</h1>
-            <div class="section-video-box" id="vedio-list">
-              <div class="video-list">
-                <a href="https://youtu.be/satcOZoRb_s?feature=shared" class="video-card">
-                  <div class="thumbnail-container">
-                    <img src="https://i.ytimg.com/vi/satcOZoRb_s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCx-_WWKNVBXec1UWof2VDAlqli7g" alt="Video Thumbnail" class="thumbnail">
-                    <p class="duration">01:37:34</p>
-                  </div>
-                  <div class="video-info">
-                    <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="Channel Logo" class="icon">
-                    <div class="video-details">
-                      <h2 class="title">The BEST Down Payment Assistance Program in Minnesota!</h2>
-                      <p class="channel-name">Afghan Comm</p>
-                      <p class="views">1.3M Views • 1 year ago</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>  
-        </div>
-        
-          <!-- Chatbot Widget -->
-          <div class="chatbot-container">
-            <div class="chatbot-header">
-                <h3>Chat with us!</h3>
-                <button id="close-chatbot">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbot-messages">
-                <!-- Chat messages will appear here -->
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="user-input" placeholder="Type your message...">
-                <button id="send-message"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-  
-        <!-- Chatbot Toggle Button -->
-        <button id="open-chatbot"><i class="fas fa-comment"></i></button>
-  
-
+      <div class="dropdown" id="dropdown">
+        <a href="index.html">
+          <i class="uil uil-estate"></i>
+          Home
+        </a>
+        <a href="help.html">
+          <i class="uil uil-question-circle"></i>
+          Help
+        </a>
+        <a href="report.html">
+          <i class="uil uil-file-medical-alt"></i>
+          Report
+        </a>
+        <a href="feedback.html">
+          <i class="uil uil-feedback"></i>
+          Feedback
+        </a>
+        <a href="privacy.html">
+          <i class="uil uil-file-lock-alt"></i>
+          Privacy Policy
+        </a>
+        <a href="terms.html">
+          <i class="uil uil-file-check-alt"></i>
+          Terms & Conditions
+        </a>
       </div>
-    </main>
-  </div>
+    </div>
+
+    <a href="#" class="navLogo">
+      <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="user-image">
+      <h2 class="logo-text">Afghan Comm</h2>
+    </a>
+  </header>
+      
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+          <h3>Chat with us!</h3>
+          <button id="close-chatbot" class="uil uil-times"></button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+          <!-- Chat messages will appear here -->
+      </div>
+      <div class="chatbot-input">
+          <input type="text" id="user-input" placeholder="Type your message...">
+          <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="open-chatbot"><i class="fas fa-comment"></i></button>
+
+
 
   <!-- Linking custom script -->
   <script src="script.js"></script>
