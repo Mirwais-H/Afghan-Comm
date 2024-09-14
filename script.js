@@ -1,78 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Menu buttons and screen overlay
-  const menuButtons = document.querySelectorAll(".menu-button");
-  const screenOverlay = document.querySelector(".main-layout .screen-overlay");
-  const themeButton = document.querySelector(".navbar .theme-button i");
-
-  // Toggle sidebar visibility when menu buttons are clicked
-  menuButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      document.body.classList.toggle("sidebar-hidden");
-    });
-  });
-
-  // Toggle sidebar visibility when screen overlay is clicked
-  screenOverlay.addEventListener("click", () => {
-    document.body.classList.toggle("sidebar-hidden");
-  });
-
-  // Show sidebar on large screens by default
-  if (window.innerWidth >= 768) {
-    document.body.classList.remove("sidebar-hidden");
-  }
-  // login and signup forms
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const loginToggle = document.getElementById('loginToggle');
-    const signupToggle = document.getElementById('signupToggle');
-    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
-    
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-
-    // Ensure these elements exist before adding event listeners
-    if (loginToggle && signupToggle && forgotPasswordLink && loginForm && signupForm) {
-        loginToggle.addEventListener('click', function() {
-            loginForm.style.display = 'block';
-            signupForm.style.display = 'none';
-        });
-
-        signupToggle.addEventListener('click', function() {
-            signupForm.style.display = 'block';
-            loginForm.style.display = 'none';
-        });
-
-        forgotPasswordLink.addEventListener('click', function() {
-            // Implement forgot password functionality or redirect here
-            alert('Forgot password link clicked');
-        });
-
-        // Initially display the login form
-        loginForm.style.display = 'block';
-        signupForm.style.display = 'none';
-    } else {
-        console.error("One or more elements are missing, please check the IDs and HTML structure.");
-    }
-});
-
-}
-)
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const planItems = document.querySelectorAll('.planItem');
-
-  planItems.forEach(item => {
-    item.addEventListener('click', () => {
-      planItems.forEach(item => item.classList.remove('blue'));
-      item.classList.add('blue');
-    });
-  });
-});
-
-
-
-
 // Chat Bot
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -176,4 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
-  
+ // Menu code 
+const dropdownBtn = document.getElementById("menuBtn");
+const dropdownMenu = document.getElementById("dropdown");
+const toggleArrow = document.getElementById("arrow");
+
+// Toggle dropdown function
+const toggleDropdown = function () {
+  dropdownMenu.classList.toggle("show");
+  toggleArrow.classList.toggle("arrow");
+};
+
+// Toggle dropdown open/close when dropdown button is clicked
+dropdownBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+// Close dropdown when dom element is clicked
+document.documentElement.addEventListener("click", function () {
+  if (dropdownMenu.classList.contains("show")) {
+    toggleDropdown();
+  }
+});
