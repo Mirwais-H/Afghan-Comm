@@ -29,10 +29,12 @@ body {
 }
 
 header {
-  background: #f1f1f1;
+  background: #e0e0e0;
   height: 80px;
   width: 100%;
+  position: fixed;
   z-index: 1000;
+  top: 0;
 }
 
 .menuBtn {
@@ -52,7 +54,8 @@ header {
   border-radius: 5px;
   border: none;
   box-shadow: var(--shadow);
-  position: relative;
+  position: fixed;
+  color: #fff;
 }
 
 .bx {
@@ -64,14 +67,16 @@ header {
   top: 60px;
   left: 10px;
   width: 250px;
-  box-shadow: var(--shadow);
-  border-radius: 5px;
+  border-radius: 15px;
   margin-top: 0.3rem;
-  background: rgb(250, 247, 247);
+  background: rgba(250, 247, 247, 0.92);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
+              -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphism effect */
   visibility: hidden;
   opacity: 0;
   transform: translateY(0.5rem);
   transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+  z-index: 9999;
 }
 
 .dropdown a {
@@ -81,6 +86,11 @@ header {
   padding: 0.8rem 1rem;
   text-decoration: none;
   color: black;
+  border-radius: 10px;
+  background: rgba(250, 247, 247, 0.92); /* Match background to maintain the effect */
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.15),
+              inset -3px -3px 6px rgba(255, 255, 255, 0.6); /* Neumorphic inset effect */
+  transition: all 0.2s ease-in-out;
 }
 
 .dropdown a:hover {
@@ -88,7 +98,10 @@ header {
   color: black;
   font-size: large;
   background: #dfdddd;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1), 
+              inset -2px -2px 4px rgba(255, 255, 255, 0.6); /* Softer Neumorphic inset on hover */
 }
+
 
 .show {
   visibility: visible;
@@ -114,17 +127,26 @@ header {
 
 .navLogo {
   display: block;
-  margin-top: -30px;
-  margin-left: 100px;
-  text-align: center;
+  margin-top: 20px;
+  margin-left: 500px;
+  text-align: left;
   text-decoration: #007BFF;
   font-size: 20px;
+  position: fixed;
 }
 
 .navLogo .user-image {
-  width: 60px;
+  width: 50px;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.navLogo .logo-text {
+  color: #007BFF;
+  font-size: 20px;
+  margin-top: -45px;
+  margin-left: 50px ;
+  position: fixed;
 }
 
 
@@ -137,6 +159,7 @@ header {
   align-items: center;
   padding: 2rem;
   background-color: #529aff28;
+  margin-top: 80px;
 }
 
 .report-header {
@@ -148,14 +171,14 @@ header {
   color: #fff;
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
+              -8px -8px 15px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 400px;
   width: 100%;
   text-align: left;
-
 }
 
 .report-form h2 {
@@ -173,26 +196,43 @@ header {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 0.5px solid rgb(0, 0, 0);
-  border-radius: 8px;
+  border: none; /* Remove hard borders for Neumorphism */
+  border-radius: 12px;
+  background: rgba(250, 247, 247, 0.92); /* Soft background */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
+              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
+  outline: none; /* Remove default input outline */
+  transition: all 0.2s ease-in-out;
+}
+
+.report-form input:focus,
+.report-form textarea:focus {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+              inset -4px -4px 8px rgba(255, 255, 255, 0.6); /* Softer inset on focus */
 }
 
 .report-form button {
   width: 200px;
   padding: 0.75rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
   display: block;
   margin: auto;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2),
+              -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic button shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .report-form button:hover {
   background-color: #074fc2;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
+              -4px -4px 10px rgba(255, 255, 255, 0.5); /* Softer shadow on hover */
 }
+
 
 /* Help Form*/ 
 .help-form-section {
@@ -202,23 +242,27 @@ header {
   align-items: center;
   padding: 2rem;
   background-color: #529aff28;
+  margin-top: 80px;
 }
 
 .help-header {
   text-align: center;
 }
 
+/* Help Form Neumorphism */
 .help-form {
   background: #007bff8f;
   color: #fff;
   border-radius: 15px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   padding: 2rem;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
+
+  /* Neumorphism box shadows */
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), 
+              -8px -8px 15px rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .help-form h2 {
@@ -226,21 +270,30 @@ header {
   color: #ffffff;
 }
 
+/* Label Styling */
 .help-form label {
   display: block;
   margin-bottom: 0.5rem;
-  text-decoration-color: #000;
+  color: #ffffff;
 }
 
+/* Input and Textarea Neumorphism */
 .help-form input,
 .help-form textarea {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 0.5px solid rgb(0, 0, 0);
-  border-radius: 8px;
+  border: none;
+  border-radius: 12px;
+
+  /* Neumorphism shadow effect */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
+              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
+  background: rgba(250, 247, 247, 0.92); /* Soft background */
+  outline: none;
 }
 
+/* Button Styling Neumorphism */
 .help-form button {
   padding: 0.75rem;
   width: 200px;
@@ -252,11 +305,19 @@ header {
   font-size: 20px;
   display: block;
   margin: auto;
+
+  /* Neumorphism button shadow */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
+              -4px -4px 8px rgba(255, 255, 255, 0.3);
 }
 
 .help-form button:hover {
   background-color: #074fc2;
+  /* Hover state Neumorphism effect */
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
+              -6px -6px 10px rgba(255, 255, 255, 0.4);
 }
+
 
 
 
@@ -439,36 +500,52 @@ header {
   text-align: center;
 }
 
+/* Feedback Form Neumorphism */
 .feedback-form {
   background: #007bff8f;
   color: #fff;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 400px;
   margin: 0 auto;
   text-align: left;
+
+  /* Neumorphism box shadows */
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), 
+              -8px -8px 15px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .feedback-form h2 {
   margin-top: 0;
+  color: #ffffff;
 }
 
+/* Label Styling */
 .feedback-form label {
   display: block;
   margin: 1rem 0 0.5rem;
+  color: #ffffff;
 }
 
+/* Input, Textarea, and Select Neumorphism */
 .feedback-form input,
 .feedback-form textarea,
 .feedback-form select {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 8px;
-  border: 0.5px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  border: none;
+
+  /* Neumorphism inset shadow */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
+              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
+  background: rgba(250, 247, 247, 0.92); /* Soft background */
+  outline: none;
 }
+
+/* Rating Stars Neumorphism */
 .rating {
   direction: rtl;
   unicode-bidi: bidi-override;
@@ -484,19 +561,24 @@ header {
   color: #ddd;
   cursor: pointer;
   padding: 0 5px;
+
+  /* Neumorphism star shadow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+              -2px -2px 5px rgba(255, 255, 255, 0.2);
 }
 
 .rating input:checked ~ label,
 .rating input:hover ~ label,
 .rating label:hover,
 .rating label:hover ~ label {
-  color: #ffca28;
+  color: #fbc31b;
 }
 
 .one {
   color: rgba(255, 255, 255, 0);
 }
 
+/* Button Styling Neumorphism */
 .feedback-form button {
   background-color: #3b82f6;
   color: #fff;
@@ -508,21 +590,178 @@ header {
   width: 250px;
   margin: auto;
   display: block;
+
+  /* Neumorphism button shadow */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
+              -4px -4px 8px rgba(255, 255, 255, 0.3);
 }
 
 .feedback-form button:hover {
   background-color: #074fc2;
+  /* Hover state Neumorphism effect */
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
+              -6px -6px 10px rgba(255, 255, 255, 0.4);
 }
+
 
 
 .section-box {
   display: flex;
   background-color: #e4e3e3;
-  width: 1250px;
+  width: 98.5%;
   height: 100%;
   padding: 15px;
+  margin-top: 10px;
   margin-left: 8px;
+  margin-right: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+}
+
+
+/* For devices with a max-width of 768px (tablets and small screens) */
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+
+  .menuBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .navLogo {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  .navLogo .logo-text {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .report-form, .help-form, .feedback-form {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .chatbot-container {
+    width: 90%;
+    height: 350px;
+  }
+
+  .chatbot-header h3 {
+    font-size: 16px;
+  }
+
+  .chatbot-input input {
+    font-size: 14px;
+  }
+
+  .chatbot-input button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    width: 200px;
+  }
+
+  .dropdown a {
+    font-size: 14px;
+  }
+}
+
+/* For devices with a max-width of 480px (mobile phones) */
+@media screen and (max-width: 480px) {
+  header {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .menuBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    position: fixed;
+    top: 15px;
+  }
+
+  .navLogo {
+    margin-left: 150px;
+    margin-top: 5px;
+    font-size: 20px;
+    transform: scale(.8);
+    position: fixed;
+  }
+
+  .navLogo .logo-text {
+    font-size: 20px;
+    margin-top: -60px;
+    margin-left: 60px;
+    position: fixed;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .report-form, .help-form, .feedback-form {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .chatbot-container {
+    width: 85%;
+    height: 300px;
+  }
+
+  .chatbot-header h3 {
+    font-size: 14px;
+  }
+
+  .chatbot-input input {
+    font-size: 12px;
+  }
+
+  .chatbot-input button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+ 
+
+  /* Report/Help form labels and input fields */
+  .report-form label, .help-form label {
+    font-size: 14px;
+  }
+
+  .report-form input, .help-form input, .feedback-form input, .feedback-form textarea {
+    font-size: 14px;
+    padding: 0.4rem;
+  }
+
+  .report-form button, .help-form button, .feedback-form button {
+    font-size: 16px;
+    padding: 0.5rem;
+  }
+
+  .section-box {
+    width: 96%;
+    margin-top: 70px;
+  }
 }
