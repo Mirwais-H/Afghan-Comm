@@ -159,7 +159,9 @@ header {
   align-items: center;
   padding: 2rem;
   background-color: #529aff28;
-  margin-top: 80px;
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 
 .report-header {
@@ -242,7 +244,9 @@ header {
   align-items: center;
   padding: 2rem;
   background-color: #529aff28;
-  margin-top: 80px;
+  margin-top: 60px;
+  height: 100%;
+  width: 100%;
 }
 
 .help-header {
@@ -494,6 +498,9 @@ header {
   flex: 1;
   padding: 2rem;
   background-color: #529aff28;
+  margin-top: 60px;
+  height: 100%;
+  width: 100%;
 }
 
 .feed-header {
@@ -725,7 +732,7 @@ header {
   }
 
   .chatbot-container {
-    width: 85%;
+    width: 250px;
     height: 300px;
   }
 
