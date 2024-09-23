@@ -147,6 +147,40 @@ header {
   position: fixed;
 }
 
+.search-bar {
+  width: 40%;
+  padding: 8px;
+  border: 1px solid #f0efef;
+  border-radius: 20px;
+  background: #f0efef;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 32px;
+  width: 70px;
+}
+
+.signup-btn {
+  background-color: #ffffff;
+  color: #0095f6;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 32px;
+  width: 75px;
+}
 
 /* Report form */ 
 
