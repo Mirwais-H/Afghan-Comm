@@ -36,8 +36,8 @@ header {
 }
 
 .menuBtn {
-  background-color: #007BFF;
-  top: 20px;
+  background-color: #0095f6;
+  top: 10px;
   left: 20px;
   width: 40px;
   height: 40px;
@@ -52,9 +52,10 @@ header {
   border-radius: 5px;
   border: none;
   box-shadow: var(--shadow);
-  position: fixed;
+  position: absolute;
   color: #fff;
 }
+
 
 .bx {
   font-size: 1.1rem;
@@ -62,20 +63,20 @@ header {
 
 .dropdown {
   position: absolute;
-  top: 60px;
+  top: 60px; /* Position the dropdown below the header */
   left: 10px;
   width: 250px;
   border-radius: 15px;
   margin-top: 0.3rem;
-  background: rgba(250, 247, 247, 0.92);
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
-              -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphism effect */
+  background: rgba(250, 247, 247, 0.92); /* Retain the background color */
   visibility: hidden;
   opacity: 0;
   transform: translateY(0.5rem);
   transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
-  z-index: 9999;
+  z-index: 2000; /* Ensure dropdown is above other elements */
 }
+
+
 
 .dropdown a {
   display: flex;
@@ -86,18 +87,17 @@ header {
   color: black;
   border-radius: 10px;
   background: rgba(250, 247, 247, 0.92); /* Match background to maintain the effect */
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.15),
-              inset -3px -3px 6px rgba(255, 255, 255, 0.6); /* Neumorphic inset effect */
+  box-shadow: none; /* Remove neumorphic inset effect */
   transition: all 0.2s ease-in-out;
+  z-index: 1000;
 }
 
 .dropdown a:hover {
   background-color: var(--color);
   color: black;
   font-size: large;
-  background: #dfdddd;
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1), 
-              inset -2px -2px 4px rgba(255, 255, 255, 0.6); /* Softer Neumorphic inset on hover */
+  background: #0095f6; /* Maintain the hover background color */
+  box-shadow: none; /* Remove neumorphic inset effect on hover */
 }
 
 
@@ -125,12 +125,12 @@ header {
 
 .navLogo {
   display: block;
-  margin-top: 20px;
-  margin-left: 500px;
+  margin-top: -10px;
+  margin-left: 150px;
   text-align: left;
   text-decoration: #007BFF;
   font-size: 20px;
-  position: fixed;
+  position: absolute;
 }
 
 .navLogo .user-image {
@@ -144,10 +144,13 @@ header {
   font-size: 20px;
   margin-top: -45px;
   margin-left: 50px ;
-  position: fixed;
+  position: absolute;
 }
 
 .search-bar {
+  display: block;
+  margin-top: 5px;
+  margin-left: 400px;
   width: 40%;
   padding: 8px;
   border: 1px solid #f0efef;
@@ -158,23 +161,28 @@ header {
 .auth-buttons {
   display: flex;
   gap: 10px;
+  margin-top: -35px;
 }
 
 .login-btn {
   background-color: #0095f6;
   color: white;
   border: none;
+  margin-top: -30px;
+  margin-left: 1000px;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
   height: 32px;
   width: 70px;
+  position: relative;
 }
 
 .signup-btn {
   background-color: #ffffff;
   color: #0095f6;
   border: none;
+  margin-top: -30px;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -182,93 +190,7 @@ header {
   width: 75px;
 }
 
-/* Report form */ 
-
-.report-form-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background-color: #529aff28;
-  margin-top: 60px;
-  width: 100%;
-  height: 100%;
-}
-
-.report-header {
-  text-align: center;
-}
-
-.report-form {
-  background: #007bff8f;
-  color: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
-              -8px -8px 15px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  max-width: 400px;
-  width: 100%;
-  text-align: left;
-}
-
-.report-form h2 {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.report-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.report-form input,
-.report-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: none; /* Remove hard borders for Neumorphism */
-  border-radius: 12px;
-  background: rgba(250, 247, 247, 0.92); /* Soft background */
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
-              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
-  outline: none; /* Remove default input outline */
-  transition: all 0.2s ease-in-out;
-}
-
-.report-form input:focus,
-.report-form textarea:focus {
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-              inset -4px -4px 8px rgba(255, 255, 255, 0.6); /* Softer inset on focus */
-}
-
-.report-form button {
-  width: 200px;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 15px;
-  background-color: #3b82f6;
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  display: block;
-  margin: auto;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2),
-              -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic button shadow */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.report-form button:hover {
-  background-color: #074fc2;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
-              -4px -4px 10px rgba(255, 255, 255, 0.5); /* Softer shadow on hover */
-}
-
-
-/* Help Form*/ 
+/* Help Form */
 .help-form-section {
   flex: 1;
   display: flex;
@@ -285,7 +207,6 @@ header {
   text-align: center;
 }
 
-/* Help Form Neumorphism */
 .help-form {
   background: #007bff8f;
   color: #fff;
@@ -294,11 +215,7 @@ header {
   max-width: 400px;
   width: 100%;
   text-align: left;
-
-  /* Neumorphism box shadows */
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), 
-              -8px -8px 15px rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .help-form h2 {
@@ -306,61 +223,76 @@ header {
   color: #ffffff;
 }
 
-/* Label Styling */
 .help-form label {
   display: block;
   margin-bottom: 0.5rem;
   color: #ffffff;
 }
 
-/* Input and Textarea Neumorphism */
 .help-form input,
+.help-form select,
 .help-form textarea {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-
-  /* Neumorphism shadow effect */
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
-              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
-  background: rgba(250, 247, 247, 0.92); /* Soft background */
+  background: rgba(250, 247, 247, 0.92);
   outline: none;
 }
 
-/* Button Styling Neumorphism */
+/* Rating Stars Neumorphism */
+.rating {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  display: inline-flex;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.rating input:checked ~ label,
+.rating input:hover ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #fbc31b;
+}
+
+.one {
+  color: rgba(255, 255, 255, 0);
+}
+
 .help-form button {
   padding: 0.75rem;
   width: 200px;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: #3b82f6;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
   display: block;
   margin: auto;
-
-  /* Neumorphism button shadow */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
-              -4px -4px 8px rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
 }
 
 .help-form button:hover {
   background-color: #074fc2;
-  /* Hover state Neumorphism effect */
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
-              -6px -6px 10px rgba(255, 255, 255, 0.4);
 }
 
 
-
-
- /* Chatbot Container */
- .chatbot-container {
+/* Chatbot Container */
+.chatbot-container {
   width: 300px;
-  height: 400px;
+  height: 350px;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -411,53 +343,43 @@ header {
 }
 
 .message.user {
-  align-items: flex-end; /* Align user messages to the right */
+  align-items: flex-end;
   color: #ffffff;
 }
 
 .message.bot {
-  align-items: flex-start; /* Align bot messages to the left */
+  align-items: flex-start;
   color: #000000;
 }
 
 .user-message, .bot-message {
-  max-width: 80%; /* Set a max width for the message container */
+  max-width: 80%;
   padding: 10px;
   border-radius: 10px;
-  word-wrap: break-word; /* Ensure long words or URLs break and wrap properly */
-  overflow-wrap: break-word; /* Ensures the text wraps inside the container */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .user-message {
-  background-color: #007BFF; /* Light color for user messages */
+  background-color: #007BFF;
   border-radius: 10px 10px 0 10px;
-  text-align: right; /* Align text to the right */
+  text-align: right;
 }
 
 .bot-message {
-  background-color: #f4f1f1; /* Light color for bot messages */
+  background-color: #f4f1f1;
   border-radius: 10px 10px 10px 0;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
-/* Ensure images in messages are aligned correctly */
 .message.user img {
-  margin-left: auto; /* Push user images to the right */
+  margin-left: auto;
 }
 
 .message.bot img {
-  margin-right: auto; /* Push bot images to the left */
+  margin-right: auto;
 }
 
-/* Ensure the chatbot message area expands vertically */
-#chatbot-messages {
-  display: flex;
-  flex-direction: column;
-  max-height: 400px; /* You can adjust this height */
-  overflow-y: auto;
-}
-
-/* Chatbot Input */
 .chatbot-input {
   display: flex;
   border-top: 1px solid #ccc;
@@ -473,32 +395,26 @@ header {
 }
 
 .chatbot-input button {
-  background-color: #007BFF; /* WhatsApp uses a green color, adjust if needed */
+  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 50%; /* Make it round */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px; /* Adjust icon size */
+  font-size: 18px;
   width: 40px;
   height: 40px;
-  margin: 5px; /* Add some spacing */
+  margin: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .chatbot-input button:hover {
-  background-color: #0056b3; /* Slightly darker shade on hover */
+  background-color: #0056b3;
 }
 
-#send-message i {
-  margin: 0;
-}
-
-
-/* Update the styling for the chat icon button */
 #open-chatbot {
   position: fixed;
   bottom: 20px;
@@ -519,128 +435,8 @@ header {
   justify-content: center;
 }
 
-#open-chatbot i {
-  margin: 0;
-}
 
 
-/* feedback form */ 
-
-.feedback-form-section {
-  flex: 1;
-  padding: 2rem;
-  background-color: #529aff28;
-  margin-top: 60px;
-  height: 100%;
-  width: 100%;
-}
-
-.feed-header {
-  text-align: center;
-}
-
-/* Feedback Form Neumorphism */
-.feedback-form {
-  background: #007bff8f;
-  color: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: left;
-
-  /* Neumorphism box shadows */
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), 
-              -8px -8px 15px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.feedback-form h2 {
-  margin-top: 0;
-  color: #ffffff;
-}
-
-/* Label Styling */
-.feedback-form label {
-  display: block;
-  margin: 1rem 0 0.5rem;
-  color: #ffffff;
-}
-
-/* Input, Textarea, and Select Neumorphism */
-.feedback-form input,
-.feedback-form textarea,
-.feedback-form select {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 12px;
-  border: none;
-
-  /* Neumorphism inset shadow */
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.15),
-              inset -5px -5px 10px rgba(255, 255, 255, 0.6); /* Neumorphic inset shadow */
-  background: rgba(250, 247, 247, 0.92); /* Soft background */
-  outline: none;
-}
-
-/* Rating Stars Neumorphism */
-.rating {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  display: inline-flex;
-}
-
-.rating input {
-  display: none;
-}
-
-.rating label {
-  font-size: 2rem;
-  color: #ddd;
-  cursor: pointer;
-  padding: 0 5px;
-
-  /* Neumorphism star shadow */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
-              -2px -2px 5px rgba(255, 255, 255, 0.2);
-}
-
-.rating input:checked ~ label,
-.rating input:hover ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-  color: #fbc31b;
-}
-
-.one {
-  color: rgba(255, 255, 255, 0);
-}
-
-/* Button Styling Neumorphism */
-.feedback-form button {
-  background-color: #3b82f6;
-  color: #fff;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  width: 250px;
-  margin: auto;
-  display: block;
-
-  /* Neumorphism button shadow */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
-              -4px -4px 8px rgba(255, 255, 255, 0.3);
-}
-
-.feedback-form button:hover {
-  background-color: #074fc2;
-  /* Hover state Neumorphism effect */
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
-              -6px -6px 10px rgba(255, 255, 255, 0.4);
-}
 
 
 
@@ -657,6 +453,245 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
 }
+
+.construction-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 520px;
+  height: 300px;
+  width: 90%;
+  margin-left: 400px;
+  margin-top: 100px;
+}
+
+.construction-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.construction-content p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 18px;
+  color: #444;
+  margin: 5px 0;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #0056b3;
+}
+
+.news-articles, .event-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+article, .event-item {
+  background-color: #f1f8e9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: left;
+}
+
+article h3, .event-item h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Section-Specific Styling */
+#welcome {
+  background-color: #e0f7fa;
+}
+
+#news, #programs, #events, #courses, #forum, #services, #membership, #contact {
+  background-color: #ffffff;
+}
+
+section:nth-child(even) {
+  background-color: #f1f8e9;
+}
+
+/* Style for the course container */
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Style for each course box */
+.course-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the course titles */
+.course-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* Style for the Buy button */
+.buy-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.buy-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .course-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .course-box {
+    width: 100%;
+  }
+}
+
+
+/* Style for the service container */
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Style for each service box */
+.service-box {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the service titles */
+.service-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* Style for the Learn More button */
+.service-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.service-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    width: 100%;
+  }
+}
+
 
 
 /* For devices with a max-width of 768px (tablets and small screens) */
@@ -734,23 +769,31 @@ header {
     width: 30px;
     height: 30px;
     font-size: 20px;
-    position: fixed;
+    position: absolute;
     top: 15px;
   }
 
   .navLogo {
-    margin-left: 150px;
-    margin-top: 5px;
+    margin-left: 50px;
+    margin-top: -10px;
     font-size: 20px;
     transform: scale(.8);
-    position: fixed;
+    position: absolute;
   }
 
   .navLogo .logo-text {
     font-size: 20px;
-    margin-top: -60px;
+    margin-top: -50px;
     margin-left: 60px;
-    position: fixed;
+    position: absolute;
+  }
+
+  .search-bar {
+    visibility: hidden;
+  }
+
+  .login-btn {
+    margin-left: 250px;
   }
 
   .main-layout {
