@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afghan Comm</title>
+  <!-- Linking Unicons For Icons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <button class="menuBtn" id="menuBtn">
+        <i class="uil uil-list-ul"></i>
+      </button>
+    
+      <div class="dropdown" id="dropdown">
+        <a href="index.html">
+          <i class="uil uil-estate"></i>
+          Home
+        </a>
+        <a href="help.html">
+          <i class="uil uil-question-circle"></i>
+          Help
+        </a>
+        <a href="privacy.html">
+          <i class="uil uil-file-lock-alt"></i>
+          Privacy Policy
+        </a>
+        <a href="terms.html">
+          <i class="uil uil-file-check-alt"></i>
+          Terms & Conditions
+        </a>
+      </div>
+    </div>
+
+    <a href="#" class="navLogo">
+      <img src="https://i.ibb.co/0DDFQdb/ACM-logo.png" alt="User Image" class="user-image">
+      <h2 class="logo-text">Community</h2>
+    </a>
+
+    <a> 
+      <input type="text" placeholder="Search" class="search-bar">
+    </a>
+
+    <div class="auth-buttons">
+      <a href="login-signup.html">
+        <button class="login-btn">Log In</button>
+      </a>
+      <a href="login-signup.html">
+        <button class="signup-btn">Sign Up</button>
+      </a>
+    </div>    
+
+  </header>
+
+      <div class="content-wrapper">
+        <!-- Category List -->
+        <div class="category-list">    
+        </div>   
+
+        <div class="construction-container">
+          <div class="construction-content">
+            <h1>🚧 Under Construction 🚧</h1>
+            <p>Our website is currently being updated. We'll be back soon!</p>
+            <p>Thank you for your patience.</p>
+            <a href="help.html" class="contact-button">Contact Us</a>
+          </div>
+        </div>
+        
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+          <h3>Chat with us!</h3>
+          <button id="close-chatbot" class="uil uil-times"></button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+          <!-- Chat messages will appear here -->
+      </div>
+      <div class="chatbot-input">
+          <input type="text" id="user-input" placeholder="Type your message...">
+          <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    
+          <!-- Chatbot Toggle Button -->
+          <button id="open-chatbot"><i class="fas fa-comment"></i></button>
+
+  </div>
+
+  <!-- Linking custom script -->
+  <script src="script.js"></script>
+</body>
+</html>
