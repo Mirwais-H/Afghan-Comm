@@ -124,3 +124,30 @@ document.documentElement.addEventListener("click", function () {
     toggleDropdown();
   }
 });
+
+
+document.querySelectorAll('.buy-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      alert('You have selected to buy this course!');
+    });
+  });
+  
+  
+document.querySelectorAll('.service-btn').forEach(button => {
+button.addEventListener('click', function() {
+    alert('More information about this service is coming soon!');
+});
+});
+
+
+document.getElementById('feedback-type').addEventListener('change', function() {
+    const otherIssueContainer = document.getElementById('other-issue-container');
+    
+    if (this.value === 'other') {
+      otherIssueContainer.style.display = 'block';  // Show the input field
+    } else {
+      otherIssueContainer.style.display = 'none';   // Hide the input field if not "Other"
+    }
+  });
+  
+  
