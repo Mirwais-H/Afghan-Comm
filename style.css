@@ -680,6 +680,133 @@ section:nth-child(even) {
   background-color: #0056b3;
 }
 
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 370px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-left: 425px;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 36%;
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  background-color: #4070f4;
+}
+
+.image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #4070f4;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.image .profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.profile-card .text-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.text-data .name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.text-data .job {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile-card .media-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.media-buttons .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  margin: 0 8px;
+  background-color: #4070f4;
+  text-decoration: none;
+}
+
+.profile-card .buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.buttons .button {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  border-radius: 24px;
+  margin: 0 10px;
+  padding: 8px 24px;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons .button:hover {
+  background-color: #0e4bf1;
+}
+
+.profile-card .analytics {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.analytics .data {
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0 20px;
+  border-right: 2px solid #e7e7e7;
+}
+
+.data i {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.data:last-child {
+  border-right: none;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 600px) {
   .service-container {
@@ -859,6 +986,47 @@ section:nth-child(even) {
   font-size: 14px;
 }
 
+.profile-card {
+  margin-left: auto; /* Center the card on small screens */
+  margin-right: auto;
+  margin-top: 20px; /* Add some margin at the top */
+  padding: 15px; /* Reduce padding */
+  width: 350px;
+}
+
+.image {
+  height: 100px; /* Reduce image size */
+  width: 100px; /* Reduce image size */
+}
+
+.text-data .name {
+  font-size: 20px; /* Adjust name font size */
+}
+
+.text-data .job {
+  font-size: 14px; /* Adjust job title font size */
+}
+
+.media-buttons .link {
+  font-size: 16px; /* Adjust icon size */
+  height: 30px; /* Adjust icon size */
+  width: 30px; /* Adjust icon size */
+}
+
+.buttons .button {
+  font-size: 12px; /* Adjust button text size */
+  padding: 6px 12px; /* Adjust button padding */
+}
+
+.analytics .data {
+  padding: 0 10px; /* Reduce padding */
+}
+
+.data i {
+  font-size: 16px; /* Adjust icon size */
+}
+}
+
   /* Report/Help form labels and input fields */
   .report-form label, .help-form label {
     font-size: 14px;
@@ -878,4 +1046,4 @@ section:nth-child(even) {
     width: 96%;
     margin-top: 70px;
   }
-}
+
